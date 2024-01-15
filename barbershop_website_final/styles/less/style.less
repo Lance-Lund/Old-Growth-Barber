@@ -1,0 +1,338 @@
+/*  
+    File: main.css
+    Class: CS135I
+    Author: Lance A. Lund  
+    Version: 1.0 
+*/
+
+/* Color Palette Variables */
+@dark-green: rgb(18, 45, 34); 
+@green: rgb(22, 56, 42);
+@dark-orange: rgb(143, 95, 13); 
+@light-orange: rgb(221, 161, 94); 
+@off-white: rgb(222, 215, 190); 
+
+@navbar-height: 50px;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* HTML */
+html {
+    background-color: @green !important;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: @green !important;
+}
+
+/* Anchors */
+a {
+    color: @off-white !important;
+    transition: color 250ms ease;
+    text-decoration: none;
+    font-variant: small-caps;
+    font-family: "Roboto", sans-serif;
+
+    &:hover, &:focus {
+    color: @light-orange !important;
+    text-decoration: none;
+    text-shadow: 0 0 5px rgba(143, 95, 13, 0.5);
+    }
+}
+
+/* Header */
+header {
+    height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: rgba(18, 45, 34, 0.9);
+    z-index: 3;
+    line-height: @navbar-height;
+}
+
+nav li {
+    padding-left: 40px;
+    font-size: 25px;
+    line-height: @navbar-height;
+}
+
+nav li::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: @dark-orange;
+    transition: width 0.3s ease-in-out;
+
+    &:hover {
+    width: 100%;
+    }
+} 
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.title p {
+    margin-top: -100px;
+}
+
+.title h3 {
+    color: @light-orange !important;
+    text-shadow: 0 0 5px rgba(143, 95, 13, 0.3);
+    font-size: 200%;
+}
+
+/* Background Image */
+#interior {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(50%);
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Logo */
+.title img {
+    display: block;
+    margin-top: -8em;
+    width: 600px;
+    height: 600px;
+    z-index: 2;
+}
+
+@media (max-width: 1200px) {
+    .title img {
+        margin-top: -6em;
+        width: 400px;
+        height: 400px;
+    }
+
+    nav li:hover::after {
+        width: 25%;
+    }
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    text-align: center;
+    font-variant: small-caps;
+    font-family: "Roboto", sans-serif;
+}
+
+nav h1 {
+    color: @light-orange !important;
+    font-size: 180%;
+}
+
+h2 {
+    color: @dark-orange !important;
+}
+
+/* Paragraphs */
+p {
+    color: @off-white !important;
+}
+
+/* Footer */
+footer {
+    margin-bottom: -1em;
+}
+
+/* Classes */
+/* Services */
+.services {
+    display: flex;
+    justify-content: center;
+
+    h3 { 
+        color: @off-white !important;
+        font-size: 250%;
+    }
+    h4 {
+        color: @light-orange !important;
+        font-size: 150%;
+    }
+    p {
+        color: @off-white !important;
+        font-size: 115%;
+        text-align: center;
+    }
+}
+
+.servicesTitle {
+    margin-top: 2.5em;
+}
+
+.hair, .beard, .special {
+    margin: 10px;
+    margin-bottom: 5%;
+    padding: 5px;
+    border: 2.5px solid @dark-orange !important;
+    border-radius: 10px;
+}
+
+.hair:hover, .beard:hover, .special:hover {
+    border-color: @light-orange !important;
+    background-color: @dark-green !important;
+    transition-duration: 333ms;
+}
+
+/* About */
+.about {
+        margin-top: 5em;
+}
+
+.story {
+    margin-top: 12.5%;
+}
+
+.about p {
+    font-size: 115%;
+}
+
+.about img {
+    width: 540px;
+    height: 500px;
+    border: 2.5px solid @light-orange !important;
+}
+
+/* Location */
+.location {
+    margin-top: 5em;
+}
+
+/* Booking */
+.book {
+    width: flex;
+}
+
+.book button {
+    margin-top: 2.5em;
+    color: @light-orange !important;
+    background-color: @green !important;
+    border: 4px solid @light-orange !important;
+    font-size: 150% !important;
+    width: 20%;
+    font-variant: small-caps;
+    border-radius: 5px;
+
+    &:hover {
+    color: white !important;
+    background-color: @light-orange !important;
+    transition-duration: 250ms;
+    }
+}
+
+/* Footer */
+footer p {
+    margin-top: -2.5em;
+}
+
+/* Social Icons */
+.icons {
+    justify-content: center;
+    filter: invert(100%);
+}
+
+.icons ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.icons li {
+    padding-left: 1em;
+}
+
+.icons li:hover::after {
+    width: 0px;
+}
+
+/* Galleries Page */
+.galleries {
+    margin-top: 5em;
+}
+
+.galleries h1 {
+    color: @dark-orange !important;
+    margin-bottom: 1em;
+}
+
+.galleries img {
+    transition: filter 0.25s, transform 0.3s;
+    filter: saturate(0.75);
+
+    &:hover {
+    filter: saturate(1.05) hue-rotate(1deg);
+    transform: translateY(2px) scale(1.05);
+    }
+}
+
+/* Contact Page */
+.contact h1 {
+    margin-top: 2.5em;
+    color: @dark-orange !important;
+    margin-bottom: 1em;
+}
+
+.contact h2 {
+    color: @light-orange !important;
+}
+
+.contact h3 {
+    color: @off-white !important;
+    margin-top: 1em;
+}
+
+.contact h4 {
+    color: @dark-orange !important;
+    margin-top: 2.5em;
+}
+
+.contact p {
+    color: @off-white !important;
+}
+
+.contact input[type=text], .contact input[type=email], .contact textarea {
+    background-color: @green !important;
+    color: @off-white !important;
+}
+
+.contact input[type=submit] {
+    margin-top: 1em;
+    color: @light-orange !important;
+    background-color: @dark-orange !important;
+    border: 4px solid @light-orange !important;
+    font-size: 150% !important;
+    width: 20%;
+    font-variant: small-caps;
+    border-radius: 5px;
+
+    &:hover {
+    color: white !important;
+    background-color: @light-orange !important;
+    transition-duration: 250ms;
+    }
+}
